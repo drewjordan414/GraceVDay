@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/garden.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
+	
 </head>
 
 <body>
@@ -68,6 +69,38 @@
 			</div>
 		</div>
 	</div>
+	<!-- button -->
+	<div id="valentineButtonContainer">
+		<button id="valentineButton">Will you be my Valentine?</button>
+	
+		<div id="responseButtons" style="display:none; margin-top: 10px;">
+			<button id="yesButton">Yes</button>
+			<button id="noButton">No</button>
+		</div>
+	
+		<div id="finalResponse" style="display:none; margin-top: 10px;"></div>
+	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#valentineButton').click(function() {
+				$('#valentineButton').hide(); // Hide the initial button
+				$('#responseButtons').show(); // Show Yes/No buttons
+			});
+	
+			$('#yesButton').click(function() {
+				$('#finalResponse').html("You said Yes! 💖").show();
+				$('#responseButtons').hide(); // Optionally hide the response buttons
+			});
+	
+			$('#noButton').click(function() {
+				$('#finalResponse').html("You said No. 😢").show();
+				$('#responseButtons').hide(); // Optionally hide the response buttons
+			});
+		});
+	</script>
+	
+	
 	<div id="copyright">
 		Copyright © 2024 <a href='https://drewjordan.dev'>drewjordan.dev</a>
 	</div>
